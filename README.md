@@ -1,5 +1,18 @@
 LHL Node Skeleton
 =========
+### Quiz App
+Quiz app is a simple single-page app that you can use to create, take and share quizzes. The users will be able to see their recent attempts at a quiz after completing them.
+
+## Planning Directory. 
+### Users Stories.
+- As a logged-in user, I can see a list of public quizzes
+- As a logged-in user, I can create a quiz
+- As a logged-in user, I can make quizzes private
+- As a logged-in user, I can provide a URL link to a single quiz to someone, and a person can take a quiz without logging into the app
+- As a logged-in user, I can attempt a quiz
+- As a logged-in user, I can see the result of my recent attempt
+- As a logged-in user, I can share a link to my result and non-user can see it
+- As a non-logged-in user, I can't create a quiz and see public quizzes
 
 ## Project Setup
 
@@ -11,6 +24,7 @@ The following steps are only for _one_ of the group members to perform.
 4. Add your team members as collaborators to the project so that they can push to this repo
 5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
 
+## 
 
 ## Getting Started
 
