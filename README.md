@@ -1,7 +1,7 @@
 LHL Node Skeleton
 =========
 ### Quiz App
-Quiz app is a simple single-page app that you can use to create, take and share quizzes. The users will be able to see their recent attempts at a quiz after completing them.
+Quiz app is a simple mulpiple-pages app that you can use to create, take and share quizzes. The users will be able to see their recent attempts at a quiz after completing them.
 
 ## Planning Directory. 
 ### Users Stories.
