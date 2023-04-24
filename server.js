@@ -9,6 +9,8 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+const bcrypt = require("bcrypt");
+
 app.set('view engine', 'ejs');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -46,6 +48,37 @@ app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get('/login', (req, res) => {
+  // using encrypted cookies
+  console.log('test');
+  res.render('login.ejs');
+  req.session.user_id = req.params.id;
+});
+
+app.post('/login', (req, res) => {
+  console.log('test');
+  req.session.user_id = req.params.id;
+  res.redirect('login.ejs');//use the routs only for redirect and its a last line
+
+});
+
+
+app.get('/submit_form', (req, res) => {
+  console.log('submit');
+  res.render('form.ejs');
+});
+
+app.get('/quiz/:id', (req, res) => {
+  console.log('quiz');
+  res.render('quiz.ejs');
+});
+
+app.post('/submit_form', (req, res) => {
+  console.log('submit');
+  // res.redirect('/');
+  return;
 });
 
 app.listen(PORT, () => {
