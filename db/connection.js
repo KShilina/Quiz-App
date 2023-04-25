@@ -2,12 +2,20 @@
 const { Pool } = require('pg');
 
 const dbParams = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  host: "localhost",
+  port: 5432,
+  user: "postgres",
+  password: "12345",
+  database: "midterm"
 };
+
+// DB_HOST=localhost
+// DB_USER=postgres
+// DB_PASS=12345
+// DB_NAME=midterm
+// # Uncomment and set to true for Heroku
+// # DB_SSL=true if heroku
+// DB_PORT=5432
 
 const db = new Pool(dbParams);
 

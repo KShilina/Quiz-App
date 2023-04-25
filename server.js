@@ -59,9 +59,7 @@ app.post('/login', (req, res) => {
   console.log('test');
   req.session.user_id = req.params.id;
   res.redirect('login.ejs');//use the post routs only for redirect and put it at the end
-
 });
-
 
 app.get('/submit_form', (req, res) => {
   console.log('submit');
@@ -76,6 +74,14 @@ app.get('/quiz/:id', (req, res) => {
 app.post('/submit_form', (req, res) => {
   console.log('submit');
 res.redirect('/');
+});
+
+app.get("/myquizzes", (req, res) => {
+  res.send('This is the existing quizzes page');
+});
+
+app.get("/results", (req, res) => {
+  res.send("This is the results page");
 });
 
 app.listen(PORT, () => {
