@@ -1,9 +1,50 @@
 -- Drop and recreate Users table (Example)
 
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS quizzes CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS results CASCADE;
+
 CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  quizzes_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE,
+  results_id INTEGER REFERENCES results(id) ON DELETE CASCADE
+);
+
+CREATE TABLE quizzes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  quiz_url VARCHAR(255) NOT NULL,
+  is_public BOOLEAN NOT NULL DEFAULT TRUE,
+  owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  categories_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  limit VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL
 );
 
-//5 table to create
+
+CREATE TABLE results (
+  id SERIAL PRIMARY KEY NOT NULL,
+  users_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  quizes_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE,
+  result_url VARCHAR(255) NOT NULL,
+  is_pass BOOLEAN NOT NULL DEFAULT TRUE,
+  timestamp timestamp default created_at
+);
+
+CREATE TABLE qustions (
+  id SERIAL PRIMARY KEY NOT NULL,
+  question TEXT,
+  answer TEXT,
+  option1 SMALLINT NOT NULL DEFAULT 0,
+  option2 SMALLINT NOT NULL DEFAULT 0,
+  option3 SMALLINT NOT NULL DEFAULT 0,
+  option4 SMALLINT NOT NULL DEFAULT 0,
+  quizes_id INTEGER REFERENCES quizzes(id) ON DELETE CASCADE
+);
+
