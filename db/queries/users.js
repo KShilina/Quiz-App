@@ -7,6 +7,16 @@ const getUsers = () => {
     });
 };
 
-console.log(getUsers());
+const getAllQuizzes = () => {
+  return db.query('SELECT * FROM quizzes;')
+  .then(data => {
+    console.log(data.rows);
+  });
+};
+getAllQuizzes();
+
+// all results
+
+
 
 module.exports = { getUsers };
