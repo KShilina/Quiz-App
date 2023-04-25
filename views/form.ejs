@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/styles/form.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Forms</title>
+</head>
+<body>
+<div id="top-bar">
+  <h1 class="title">Create new quiz</h1>
+</div>
+
+<form action="/submit_form" method="POST" class="main-form">
+  <div id="form-div">
+    <label for="input1" id="title">Title:</label>
+    <input type="text" id="title" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <label for="input2" id="category">Category:</label>
+    <input type="text" style="margin-bottom: 50px; height: 35px; width: 100px"><br>
+
+    <label for="input3" id="question">Question:</label>
+    <input type="text" id="question" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <input type="submit" value="Submit">
+  </div>
+<!-- finish with 4 forms for the answers -->
+</div>
+
+</form>
+
+</body>
+</html>
