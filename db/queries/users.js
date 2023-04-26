@@ -49,7 +49,6 @@ const getAllResults = () => {
  * @param {{}} quiz An object containing all of the quiz details.
  * @return {Promise<{}>} A promise to the quiz.
  */
-
 const addQuiz = function (quiz) {
   return pool
     .query(
