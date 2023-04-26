@@ -23,24 +23,24 @@ VALUES (2, 'Introduction to SQL');
 INSERT INTO categories (id, name)
 VALUES (3, 'Introduction to JavaScript');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions)
-VALUES (2, ' ', FALSE, 1, 1, 5);
+INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions,title)
+VALUES (1, ' ', FALSE, 1, 2, 5, 'SQL statements');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions)
-VALUES (3,' ', true, 1, 3, 5);
+INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions, title)
+VALUES (2,' ', true, 1, 1, 5,'Backend quiz');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions)
-VALUES (3,' ', true, 2, 1, 5);
+INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions, title)
+VALUES (3,' ', true, 2, 3, 5,'JavaScript quiz 2');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions)
-VALUES (4,' ', true, 2, 3, 5);
+INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions,title)
+VALUES (4,' ', true, 2, 3, 5,'JavaScript quiz 3');
 
-
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id)
-VALUES (1, 'What do we use POST request for?', 'For sending data to the server', 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 1);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id)
-VALUES (3, 'What is in the response body of a servers response to GET request?', 'The data that the cleint requested', 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 1);
+VALUES (1, 'What do we use POST request for?', 'For sending data to the server', 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
+
+INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id)
+VALUES (3, 'What is in the response body of a servers response to GET request?', 'The data that the cleint requested', 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (2, 'Which SQL statement is used to extract data from a database?',
 'SELECT',
@@ -48,7 +48,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'EXTRACT',
 'OPEN',
 'SELECT',
-2);
+1);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (5, 'With SQL, how do you select all the columns from a table named "Persons"?',
 'SELECT * FROM Persons',
@@ -56,7 +56,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT * .Persons',
 'SELECT [all] FROM Persons',
 'SELECT Persons',
-2);
+1);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (6, 'With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?',
 'SELECT * FROM Persons WHERE FirstName="a%"',
@@ -64,7 +64,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT * FROM Persons WHERE FirstName="a"',
 'SELECT * FROM Persons WHERE FirstName="%a%"',
 'SELECT * FROM Persons WHERE FirstName="a%"',
-2);
+1);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (7, 'Which SQL keyword is used to sort the result-set?',
 'ORDER BY',
@@ -72,7 +72,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'ORDER BY',
 'SORT BY',
 'ORDER',
-2);
+1);
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (8, 'With SQL, how can you return the number of records in the "Persons" table?',
 'SELECT COUNT() FROM Persons',
@@ -80,7 +80,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT COLUMNS() FROM Persons',
 'SELECT COUNT() FROM Persons',
 'SELECT NO(*) FROM Persons',
-2);
+1);
 
 
 INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (9, 'What is the correct way to write an arrow function?',
@@ -160,7 +160,7 @@ INSERT INTO results (id, users_id, quiz_id, result_url, is_pass, created_at)
 VALUES (3, 1, 1, ' ', true, '2023-04-25');
 
 INSERT INTO results (id, users_id, quiz_id, result_url, is_pass, created_at)
-VALUES (2, 1, 1, ' ', true, '2023-04-25');
+VALUES (2, 1, 2, ' ', true, '2023-04-25');
 
 
 
