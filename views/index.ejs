@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/home_page.css" />
 
 
   <script type="text/javascript" src="/login.ejs"></script>
@@ -22,13 +23,25 @@
 <body>
   <!-- <a onclick="window.location.href='form'">Go to My Page</a> -->
 
-  <a href="/myquizzes">My Quizzes</a>
-  <a href="/submit_form">Create Quiz</a>
-  <a href="/results">Results</a>
+<nav class="nav">Quiz App</nav>
 
-  </body>
+<div class="button-box-container">
+  <button class="button-box" onclick="location.href='form.ejs';">Button 1</button>
+  <button class="button-box" onclick="location.href='page2.html';">Button 2</button>
+  <button class="button-box" onclick="location.href='page3.html';">Button 3</button>
+  <button class="button-box" onclick="location.href='page4.html';">Button 4</button>
+  <button class="button-box" onclick="location.href='page5.html';">Button 5</button>
+</div>
 
-  <h1>Quiz app</h1>
+<div class="main-box">
+  <p>This will be the box</p>
+</div>
+<div class="three-boxes">
+  <div class="small-box"></div>
+  <div class="small-box"></div>
+  <div class="small-box"></div>
+</div>
 </body>
+
 
 </html>
