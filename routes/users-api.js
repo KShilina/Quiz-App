@@ -21,4 +21,29 @@ router.get('/', (req, res) => {
     });
 });
 
+// submit quiz
+
+router.post('/submit_form', (req, res) => {
+  userQueries.addQuiz(req.body)
+    .then(quiz => {
+      //add question
+      userQueries.addQuestion(req.body, quiz.id)
+      .then(question => {
+        res.json({ question });
+      })
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+});
+
+router.post('/results',(req, res) =>{
+
+})
+
+router.get('user')
+
 module.exports = router;
