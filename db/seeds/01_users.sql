@@ -23,26 +23,26 @@ VALUES (2, 'Introduction to SQL');
 INSERT INTO categories (id, name)
 VALUES (3, 'Introduction to JavaScript');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES (1, ' ', FALSE, 1, 2, 5, 'SQL statements');
+INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
+VALUES ( ' ', FALSE, 1, 2, 5, 'SQL statements');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions, title)
-VALUES (2,' ', true, 1, 1, 5,'Backend quiz');
+INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions, title)
+VALUES (' ', true, 1, 1, 5,'Backend quiz');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions, title)
-VALUES (3,' ', true, 2, 3, 5,'JavaScript quiz 2');
+INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions, title)
+VALUES (' ', true, 2, 3, 5,'JavaScript quiz 2');
 
-INSERT INTO quizzes (id, quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES (4,' ', true, 2, 3, 5,'JavaScript quiz 3');
+INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
+VALUES (' ', true, 2, 3, 5,'JavaScript quiz 3');
 
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id)
-VALUES (1, 'What do we use POST request for?', 'For sending data to the server', 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
+VALUES ('What do we use POST request for?', 'For sending data to the server', 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id)
-VALUES (3, 'What is in the response body of a servers response to GET request?', 'The data that the cleint requested', 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
+INSERT INTO questions ( question, answer, option1, option2, option3, option4, quiz_id)
+VALUES ('What is in the response body of a servers response to GET request?', 'The data that the cleint requested', 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (2, 'Which SQL statement is used to extract data from a database?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which SQL statement is used to extract data from a database?',
 'SELECT',
 'GET',
 'EXTRACT',
@@ -50,7 +50,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT',
 1);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (5, 'With SQL, how do you select all the columns from a table named "Persons"?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how do you select all the columns from a table named "Persons"?',
 'SELECT * FROM Persons',
 'SELECT * FROM Persons',
 'SELECT * .Persons',
@@ -58,7 +58,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT Persons',
 1);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (6, 'With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?',
 'SELECT * FROM Persons WHERE FirstName="a%"',
 'SELECT * FROM Persons WHERE FirstName LIKE "%a"',
 'SELECT * FROM Persons WHERE FirstName="a"',
@@ -66,7 +66,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'SELECT * FROM Persons WHERE FirstName="a%"',
 1);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (7, 'Which SQL keyword is used to sort the result-set?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which SQL keyword is used to sort the result-set?',
 'ORDER BY',
 'SORT',
 'ORDER BY',
@@ -74,7 +74,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'ORDER',
 1);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (8, 'With SQL, how can you return the number of records in the "Persons" table?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how can you return the number of records in the "Persons" table?',
 'SELECT COUNT() FROM Persons',
 'SELECT LEN() FROM Persons',
 'SELECT COLUMNS() FROM Persons',
@@ -83,7 +83,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 1);
 
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (9, 'What is the correct way to write an arrow function?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the correct way to write an arrow function?',
 'const myFunction = (arg) => {<function-body>}',
 'const myFunction = function(arg) => {<function-body>}',
 'const myFunction => function(arg) {<function-body>}',
@@ -92,7 +92,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 3);
 
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (10, 'What method is used to divide a string into an array?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What method is used to divide a string into an array?',
 '.split',
 '.split',
 '.map',
@@ -101,7 +101,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 3);
 
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (11, 'Which of the following is not a JavaScript data type?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which of the following is not a JavaScript data type?',
 'Function',
 'Number',
 'String',
@@ -110,7 +110,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 3);
 
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (12, 'What is the error with the following function implementation?
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the error with the following function implementation?
 const myFunction = function(arg) {
   let newArr = [];
   for (let i = 0; i > arg.length; i++) {
@@ -126,8 +126,7 @@ const myFunction = function(arg) {
 'semicolon use is not correct',
 3);
 
-
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (13, 'What is the correct method for error handling when using promises?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the correct method for error handling when using promises?',
 '.catch',
 '.then',
 '.catch',
@@ -135,7 +134,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 '.isArray',
 4);
 
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (14, 'What is the first parameter of a fetch function?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the first parameter of a fetch function?',
 'the url that data is being retrieved from',
 'the url that data is being retrieved from',
 'the callback that handles errors',
@@ -143,8 +142,7 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'the data type that the data will be retrieved in',
 4);
 
-
-INSERT INTO questions (id, question, answer, option1, option2, option3, option4, quiz_id) VALUES (15, 'String interpolation is the only way to log passed arguments to the console?',
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('String interpolation is the only way to log passed arguments to the console?',
 'true',
 'true',
 'false',
@@ -152,15 +150,11 @@ INSERT INTO questions (id, question, answer, option1, option2, option3, option4,
 'falsee',
 4);
 
+INSERT INTO results (users_id, quiz_id, result_url, is_pass, created_at)
+VALUES ( 1, 1, ' ', true, '2023-04-25');
 
-
-
-
-INSERT INTO results (id, users_id, quiz_id, result_url, is_pass, created_at)
-VALUES (3, 1, 1, ' ', true, '2023-04-25');
-
-INSERT INTO results (id, users_id, quiz_id, result_url, is_pass, created_at)
-VALUES (2, 1, 2, ' ', true, '2023-04-25');
+INSERT INTO results (users_id, quiz_id, result_url, is_pass, created_at)
+VALUES (1, 2, ' ', true, '2023-04-25');
 
 
 
