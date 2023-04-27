@@ -44,6 +44,6 @@ router.post('/results',(req, res) =>{
 
 })
 
-router.get('user')
+// router.get('user')
 
 module.exports = router;
