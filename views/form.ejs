@@ -9,21 +9,84 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <title>Forms</title>
 </head>
-<body>
+<body class="main-form-body">
 <div id="top-bar">
   <h1 class="title">Create new quiz</h1>
 </div>
 
-<form action="/submit_form" method="POST" class="main-form">
+<form action="/api/users/submit_form" method="POST" class="main-form">
   <div id="form-div">
     <label for="input1" id="title">Title:</label>
-    <input type="text" id="title" style="margin-bottom: 50px; width: 150px;"><br>
+    <input type="text" id="title" name = 'title' style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input2" id="category">Category:</label>
-    <input type="text" style="margin-bottom: 50px; height: 35px; width: 100px"><br>
+    <input type="text"  name = 'category' style="margin-bottom: 50px; height: 35px; width: 100px"><br>
 
-    <label for="input3" id="question">Question:</label>
-    <input type="text" id="question" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input3" id="question1">Question 1:</label>
+
+    <input type="text" name = 'question1' id="question1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input4" id="q1_ans_1">Possible Answer 1. </label>
+    <input type="text" name = 'q1_ans_1' id="q1_ans_1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input5" id="q1_ans_2">Possible Answer 2. </label>
+    <input type="text" name = 'q1_ans_2' id="q1_ans_2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input6" id="q1_ans_3">Possible Answer 3. </label>
+    <input type="text" name = 'q1_ans_3' id="q1_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input7" id="q1_ans_4">Possible Answer 4. </label>
+    <input type="text" name = 'q1_ans_4' id="q1_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input9" id="q1_correct">Correct Answer</label>
+    <input type="text" name = 'q1_correct' id="q1_correct" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <label for="input10" id="question2">Question 2:</label>
+    <input type="text" name = 'question2' id="question2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input11" id="q2_ans_1">Possible Answer 1. </label>
+    <input type="text" name = 'q2_ans_1' id="q2_ans_1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input12" id="q2_ans_2">Possible Answer 2. </label>
+    <input type="text" name = 'q2_ans_2' id="q2_ans_2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input13" id="q2_ans_3">Possible Answer 3. </label>
+    <input type="text" name = 'q2_ans_3' id="q2_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input14" id="q2_ans_4">Possible Answer 4. </label>
+    <input type="text" name = 'q2_ans_4' id="q2_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input15" id="q2_correct">Correct Answer</label>
+    <input type="text" name = 'q2_correct' id="q2_correct" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <label for="input16" id="question3">Question 3:</label>
+    <input type="text" name = 'question3' id="question3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input17" id="q3_ans_1">Possible Answer 1. </label>
+    <input type="text" name = 'q3_ans_1' id="q3_ans_1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input18" id="q3_ans_2">Possible Answer 2. </label>
+    <input type="text" name = 'q3_ans_2' id="q3_ans_2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input19" id="q3_ans_3">Possible Answer 3. </label>
+    <input type="text" name = 'q3_ans_3' id="q3_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input20" id="q3_ans_4">Possible Answer 4. </label>
+    <input type="text" name = 'q3_ans_4' id="q3_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input21" id="q3_correct">Correct Answer</label>
+    <input type="text" name = 'q3_correct' id="q3_correct" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <label for="input22" id="question4">Question 4:</label>
+    <input type="text" name = 'question4' id="question4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input23" id="q4_ans_1">Possible Answer 1. </label>
+    <input type="text" name = 'q4_ans_1' id="q4_ans_1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input24" id="q4_ans_2">Possible Answer 2. </label>
+    <input type="text" name = 'q4_ans_2' id="q4_ans_2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input25" id="q4_ans_3">Possible Answer 3. </label>
+    <input type="text" name = 'q4_ans_3' id="q4_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input26" id="q4_ans_4">Possible Answer 4. </label>
+    <input type="text" name = 'q4_ans_4' id="q4_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input27" id="q4_correct">Correct Answer</label>
+    <input type="text" name = 'q4_correct' id="q4_correct" style="margin-bottom: 50px; width: 150px;"><br>
+
+    <label for="input28" id="question5">Question 5:</label>
+    <input type="text" name = 'question5' id="question5" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input29" id="q5_ans_1">Possible Answer 1. </label>
+    <input type="text" name = 'q5_ans_1' id="q5_ans_1" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input30" id="q5_ans_2">Possible Answer 2. </label>
+    <input type="text" name = 'q5_ans_2' id="q5_ans_2" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input31" id="q5_ans_3">Possible Answer 3. </label>
+    <input type="text" name = 'q5_ans_3' id="q5_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input32" id="q5_ans_4">Possible Answer 4. </label>
+    <input type="text" name = 'q5_ans_4' id="q5_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
+    <label for="input33" id="q5_correct">Correct Answer</label>
+    <input type="text" name = 'q5_correct' id="q5_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
     <input type="submit" value="Submit">
   </div>
