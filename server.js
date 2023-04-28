@@ -59,7 +59,7 @@ app.get("/myquizzes", (req, res) => {
 });
 
 app.get("/results", (req, res) => {
-  res.send("This is the results page");
+  res.render('results');
 });
 
 app.listen(PORT, () => {
