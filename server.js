@@ -58,6 +58,10 @@ app.get("/myquizzes", (req, res) => {
   res.render('quiz');
 });
 
+app.get("/users_quizzes", (req, res) => {
+  res.render('myquizzes');
+});
+
 app.get("/results", (req, res) => {
   res.send("This is the results page");
 });
