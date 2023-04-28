@@ -10,7 +10,17 @@
   <title>Forms</title>
 </head>
 <body class="main-form-body">
-<div id="top-bar">
+  <div class="button-box-container">
+    <button class="button-box" onclick="location.href='form.ejs';">Button 1</button>
+    <button class="button-box" onclick="location.href='page2.html';">Button 2</button>
+    <button class="button-box" onclick="location.href='page3.html';">Button 3</button>
+    <button class="button-box" onclick="location.href='page4.html';">Button 4</button>
+  </div>
+  <div class="quiz-bar">
+    Create quiz
+  </div>
+
+  <div id="top-bar">
   <h1 class="title">Create new quiz</h1>
 </div>
 
@@ -20,7 +30,7 @@
     <input type="text" id="title" name = 'title' style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input2" id="category">Category:</label>
-    <input type="text"  name = 'category' style="margin-bottom: 50px; height: 35px; width: 100px"><br>
+    <input type="text"  name='category' style="margin-bottom: 50px; size: 100px; width: 100px"><br>
 
     <label for="input3" id="question1">Question 1:</label>
 
@@ -33,7 +43,7 @@
     <input type="text" name = 'q1_ans_3' id="q1_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
     <label for="input7" id="q1_ans_4">Possible Answer 4. </label>
     <input type="text" name = 'q1_ans_4' id="q1_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
-    <label for="input9" id="q1_correct">Correct Answer</label>
+    <label for="input9" id="q1_correct">Correct Answer:</label>
     <input type="text" name = 'q1_correct' id="q1_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input10" id="question2">Question 2:</label>
@@ -46,7 +56,7 @@
     <input type="text" name = 'q2_ans_3' id="q2_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
     <label for="input14" id="q2_ans_4">Possible Answer 4. </label>
     <input type="text" name = 'q2_ans_4' id="q2_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
-    <label for="input15" id="q2_correct">Correct Answer</label>
+    <label for="input15" id="q2_correct">Correct Answer:</label>
     <input type="text" name = 'q2_correct' id="q2_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input16" id="question3">Question 3:</label>
@@ -59,7 +69,7 @@
     <input type="text" name = 'q3_ans_3' id="q3_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
     <label for="input20" id="q3_ans_4">Possible Answer 4. </label>
     <input type="text" name = 'q3_ans_4' id="q3_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
-    <label for="input21" id="q3_correct">Correct Answer</label>
+    <label for="input21" id="q3_correct">Correct Answer:</label>
     <input type="text" name = 'q3_correct' id="q3_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input22" id="question4">Question 4:</label>
@@ -72,7 +82,7 @@
     <input type="text" name = 'q4_ans_3' id="q4_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
     <label for="input26" id="q4_ans_4">Possible Answer 4. </label>
     <input type="text" name = 'q4_ans_4' id="q4_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
-    <label for="input27" id="q4_correct">Correct Answer</label>
+    <label for="input27" id="q4_correct">Correct Answer:</label>
     <input type="text" name = 'q4_correct' id="q4_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
     <label for="input28" id="question5">Question 5:</label>
@@ -85,10 +95,10 @@
     <input type="text" name = 'q5_ans_3' id="q5_ans_3" style="margin-bottom: 50px; width: 150px;"><br>
     <label for="input32" id="q5_ans_4">Possible Answer 4. </label>
     <input type="text" name = 'q5_ans_4' id="q5_ans_4" style="margin-bottom: 50px; width: 150px;"><br>
-    <label for="input33" id="q5_correct">Correct Answer</label>
+    <label for="input33" id="q5_correct">Correct Answer:</label>
     <input type="text" name = 'q5_correct' id="q5_correct" style="margin-bottom: 50px; width: 150px;"><br>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="submit">
   </div>
 <!-- finish with 4 forms for the answers -->
 </div>
