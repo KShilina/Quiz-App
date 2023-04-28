@@ -58,7 +58,7 @@ app.get("/myquizzes", (req, res) => {
   res.render('quiz');
 });
 
-app.get("/users_quizzes", (req, res) => {
+app.get("/users_quizzes/", (req, res) => {
   res.render('myquizzes');
 });
 

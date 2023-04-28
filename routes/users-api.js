@@ -23,14 +23,34 @@ router.get('/', (req, res) => {
 
 // submit quiz
 
+// router.post('/submit_form', (req, res) => {
+//   userQueries.addQuiz(req.body)
+//     .then(quiz => {
+//       //add question
+//       userQueries.addQuestion(req.body, quiz.id)
+//       .then(question => {
+//         res.json({ question });
+//       })
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+
+// });
+
+
+
+
 router.post('/submit_form', (req, res) => {
   userQueries.addQuiz(req.body)
     .then(quiz => {
       //add question
-      userQueries.addQuestion(req.body, quiz.id)
-      .then(question => {
-        res.json({ question });
-      })
+      return userQueries.addQuestion(req.body, quiz.id)
+    })
+    .then(question => {
+      res.json({ question });
     })
     .catch(err => {
       res
@@ -41,8 +61,8 @@ router.post('/submit_form', (req, res) => {
 });
 
 router.post('/results',(req, res) =>{
-
-})
+  res.redirect('results/:id_results');
+});
 
 // router.get('user')
 
