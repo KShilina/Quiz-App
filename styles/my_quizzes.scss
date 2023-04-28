@@ -1,0 +1,27 @@
+@import 'variables';
+
+.my-quizzes {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 750px;
+  background-color: $myQuizzesBackgroundColor;
+}
+.user-quiz{
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+.my-quiz{
+  text-align: left;
+}
+
+.user-quizzes-btn{
+  margin-bottom: 20px;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+  background-color: userQuizzesBtnBackgroundColor;
+}
+
+.user-quizzes-btn:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
