@@ -9,10 +9,23 @@ const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
 
-router.get('/', (req, res) => {
-  userQueries.getUsers()
-    .then(users => {
-      res.json({ users });
+// router.get('/', (req, res) => {
+//   userQueries.getUsers()
+//     .then(users => {
+//       res.json({ users });
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
+//? = queries, :  = params;
+router.get('/users_quizzes/:id', (req, res) => {
+  const owner_id = req.params.id;
+  userQueries.getAllQuizzes(owner_id)
+    .then(quizzes => {
+      res.json({ quizzes });
     })
     .catch(err => {
       res
