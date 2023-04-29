@@ -24,7 +24,7 @@ INSERT INTO categories (id, name)
 VALUES (3, 'Introduction to JavaScript');
 
 INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES ( ' ', FALSE, 1, 2, 5, 'SQL statements');
+VALUES ( ' ', true, 1, 2, 5, 'SQL statements');
 
 INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions, title)
 VALUES (' ', true, 1, 1, 5,'Backend quiz');
@@ -33,7 +33,7 @@ INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions
 VALUES (' ', true, 2, 3, 5,'JavaScript quiz 2');
 
 INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES (' ', true, 2, 3, 5,'JavaScript quiz 3');
+VALUES (' ', false, 2, 3, 5,'JavaScript quiz 3');
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
@@ -150,11 +150,11 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 'falsee',
 4);
 
-INSERT INTO results (users_id, quiz_id, result_url, is_pass, created_at)
-VALUES ( 1, 1, ' ', true, '2023-04-25');
+INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
+VALUES ( 1, 1, ' ', 0, '2023-04-25');
 
-INSERT INTO results (users_id, quiz_id, result_url, is_pass, created_at)
-VALUES (1, 2, ' ', true, '2023-04-25');
+INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
+VALUES (1, 2, ' ', 0, '2023-04-25');
 
 
 
