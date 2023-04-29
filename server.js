@@ -58,13 +58,21 @@ app.get("/myquizzes", (req, res) => {
   res.render('quiz');
 });
 
-app.get("/users_quizzes/", (req, res) => {
+app.get("/users_quizzes", (req, res) => {
   res.render('myquizzes');
 });
 
 app.get("/results", (req, res) => {
   res.render('results');
 });
+
+app.get("/users_quizzes/:id", (req, res) => {
+  res.render('quiz')
+ });
+
+ app.get("results/:id_results",(req, res) =>{
+  res.redirect('results');
+ })
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
