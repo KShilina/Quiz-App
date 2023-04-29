@@ -6,6 +6,7 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 
+
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -54,9 +55,17 @@ app.get('/submit_form', (req, res) => {
   res.render('form');
 });
 
-app.get("/myquizzes", (req, res) => {
+// app.get("/myquizzes", (req, res) => {
+//   res.render('quiz');
+// });
+
+app.get("/users_quizzes/:id", (req, res) => {
+  const id = req.params.id;
+  const userData = quizzes[id];
+  console.log(userID);
+  console.log(userData);
   res.render('quiz');
-});
+ });
 
 app.get("/users_quizzes", (req, res) => {
   res.render('myquizzes');
@@ -66,9 +75,7 @@ app.get("/results", (req, res) => {
   res.render('results');
 });
 
-app.get("/users_quizzes/:id", (req, res) => {
-  res.render('quiz')
- });
+
 
  app.get("results/:id_results",(req, res) =>{
   res.redirect('results');
