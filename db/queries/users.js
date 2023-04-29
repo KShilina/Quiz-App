@@ -21,16 +21,14 @@ const db = require('../connection');
  * @param {string} owner_id The id of the user.
  * @return {Promise<[{}]>} A promise to the quizzes.
  */
-const getAllQuizzes = function (owner_id, limit = 10) {
+const getAllQuizzes = function (owner_id) {
   return db
     .query(
-      `
-      SELECT owner_id, questions.question
+      `SELECT title, categories.name
       FROM quizzes
-      JOIN questions ON quizzes.id = questions.quiz_id
-      WHERE is_public = true
-      LIMIT $2;`,
-      [owner_id, limit]
+      JOIN categories ON categories_id = categories.id
+      WHERE owner_id=$1;
+      `, [owner_id]
     )
     .then((res) => {
       return res.rows;
@@ -72,7 +70,7 @@ const addQuiz = function(quiz) {
     });
 };
 
-// adding a questio to the quiz
+// adding a question to the quiz
 
 const addQuestion = function(question, quiz_id) {
   return db
@@ -97,7 +95,7 @@ const addQuestion = function(question, quiz_id) {
     });
 };
 
-const
+
 
 
 module.exports = {
