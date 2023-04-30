@@ -34,6 +34,19 @@ router.get('/users_quizzes/:id', (req, res) => {
     });
 });
 
+router.get('/results/:id', (req, res) => {
+  const owner_id = req.params.id;
+  userQueries.getAllResults(owner_id)
+    .then(results => {
+      res.json({ results });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 router.get('/users_quizzes/quiz/:id', (req,res) =>{
   const quiz_id = req.params.id;
   userQueries.takeQuiz(quiz_id)
