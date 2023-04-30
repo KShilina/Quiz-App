@@ -76,7 +76,7 @@ router.post('/submit_form', (req, res) => {
 router.get("/", (req, res) => {
   userQueries.showQuizzes(req.query)
   .then(quiz => {
-    res.json( quiz );
+    res.json(quiz);
   })
   .catch(err => {
     res.status(500).json({ error: err.message })
