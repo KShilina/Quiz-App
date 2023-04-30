@@ -64,6 +64,7 @@ app.get("/users_quizzes/:id", (req, res) => {
   const userData = quizzes[id];
   console.log(userID);
   console.log(userData);
+  //create templatevars and fetch the quizzes
   res.render('quiz');
  });
 
@@ -75,7 +76,13 @@ app.get("/results", (req, res) => {
   res.render('results');
 });
 
-
+app.get("/users_quizzes/quiz/:id", (req,res) =>{
+  const quizID = req.params.id;
+  const quizData = quizzes[id];
+  console.log(quizID);
+  console.log(quizData);
+  res.render('quiz');
+})
 
  app.get("results/:id_results",(req, res) =>{
   res.redirect('results');
