@@ -34,6 +34,19 @@ router.get('/users_quizzes/:id', (req, res) => {
     });
 });
 
+router.get('/users_quizzes/quiz/:id', (req,res) =>{
+  const quiz_id = req.params.id;
+  userQueries.takeQuiz(quiz_id)
+  .then(quizzes =>{
+    res.json({quizzes});
+  })
+  .catch(err =>{
+    res.
+    status(500)
+    .json({error:err.message});
+  });
+});
+
 // submit quiz
 
 // router.post('/submit_form', (req, res) => {
@@ -76,6 +89,9 @@ router.post('/submit_form', (req, res) => {
 router.post('/results',(req, res) =>{
   res.redirect('results/:id_results');
 });
+
+
+
 
 // router.get('user')
 
