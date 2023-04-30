@@ -36,8 +36,14 @@ const getAllQuizzes = function (owner_id) {
 };
 
 // get all results
-const getAllResults = () => {
-  return db.query('SELECT * FROM results;')
+const getAllResults = function (owner_id) {
+  return db.query(`
+  SELECT results.score, results.created_at, quizzes.title, categories.name
+  FROM results
+  JOIN quizzes ON quiz_id = quizzes.id
+  JOIN categories ON categories_id = categories.id
+  WHERE owner_id=$1;
+  `, [owner_id])
   .then(data => {
     return data.rows;
   });
