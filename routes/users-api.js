@@ -73,6 +73,16 @@ router.post('/submit_form', (req, res) => {
 
 });
 
+router.get("/", (req, res) => {
+  userQueries.showQuizzes(req.body)
+  .then(quiz => {
+    res.json({ title, category });
+  })
+  .catch(err => {
+    res.status(500).json({ error: err.message })
+  });
+})
+
 router.post('/results',(req, res) =>{
   res.redirect('results/:id_results');
 });
