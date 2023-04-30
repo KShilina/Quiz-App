@@ -59,8 +59,7 @@ const showQuizzes = () => {
  * @return {Promise<{}>} A promise to the quiz.
  */
 
-// add quiz
-
+// add quiz to db
 const addQuiz = function(quiz) {
   //add quiz data to db
   return db
@@ -78,6 +77,21 @@ const addQuiz = function(quiz) {
     .then((res) => {
       return res.rows[0];
     });
+};
+
+//take quiz with an uniq id
+const takeQuiz = function(quiz_id) {
+  return db
+        .query(
+          `SELECT quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4
+          FROM quizzes
+          JOIN questions ON quiz_id = quizzes.id
+          WHERE quiz_id = $1 `,
+          [quiz_id]
+        )
+        .then((res) => {
+          return res.rows;
+        });
 };
 
 // adding a question to the quiz
@@ -114,5 +128,6 @@ module.exports = {
   getAllResults,
   addQuiz,
   addQuestion,
+  takeQuiz,
   showQuizzes
 };

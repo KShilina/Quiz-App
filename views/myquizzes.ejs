@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>My Quizzes</title>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,22 +25,24 @@
     <nav class="nav"><img src="/assets/quizLogo.png" alt="quiz_logo" /></nav>
 
     <div class="button-box-container">
-      <button class="button-box" onclick="location.href='form.ejs';">
-        Button 1
-      </button>
-      <button class="button-box" onclick="location.href='page2.html';">
-        Button 2
+      <button class="button-box" onclick="location.href='submit_form';">
+        Create Quiz
       </button>
       <button class="button-box" onclick="location.href='users_quizzes';">
         My Quizzes
       </button>
-      <button class="button-box" onclick="location.href='page4.html';">
-        Button 4
+
+      <button class="button-box" onclick="location.href='results';">
+        My results
+      </button>
+
+      <button class="button-box" onclick="location.href='/';">
+        Home
       </button>
     </div>
 
     <h1>My Quizzes</h1>
-    <form action="/api/users/user_quizzes/:id" method="GET">
+    <form action="/api/users/user_quizzes/" method="GET">
       <div class="my-quizzes">
         <button class="user-quizzes-btn" onclick="location.href='users_quizzes/:id'; ">
           <div class="my-quiz">
