@@ -43,6 +43,16 @@ const getAllResults = () => {
   });
 };
 
+const showQuizzes = () => {
+  return db.query(`SELECT title, category
+  FROM quizzes
+  WHERE is_public = true
+  LIMIT 3`)
+  .then(result => {
+    return result.rows
+  })
+}
+
 /**
  * Add a quiz to the database
  * @param {{}} quiz An object containing all of the quiz details.
@@ -104,4 +114,5 @@ module.exports = {
   getAllResults,
   addQuiz,
   addQuestion,
+  showQuizzes
 };
