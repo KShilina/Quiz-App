@@ -36,8 +36,8 @@ const usersRoutes = require('./routes/users');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
+//app.use('/api/users', userApiRoutes);
+//app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -55,34 +55,6 @@ app.get('/submit_form', (req, res) => {
   res.render('form');
 });
 
-// app.get("/myquizzes", (req, res) => {
-//   res.render('quiz');
-// });
-
-app.get("/users_quizzes/:id", (req, res) => {
-  const id = req.params.id;
-  const userData = quizzes[id];
-  console.log(userID);
-  console.log(userData);
-  //create templatevars and fetch the quizzes
-  res.render('quiz');
- });
-
-app.get("/users_quizzes", (req, res) => {
-  res.render('myquizzes');
-});
-
-app.get("/results", (req, res) => {
-  res.render('results');
-});
-
-app.get("/users_quizzes/quiz/:id", (req,res) =>{
-  const quizID = req.params.id;
-  const quizData = quizzes[id];
-  console.log(quizID);
-  console.log(quizData);
-  res.render('quiz');
-})
 
  app.get("results/:id_results",(req, res) =>{
   res.redirect('results');

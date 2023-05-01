@@ -12,6 +12,8 @@
 
 .my-quiz {
   text-align: left;
+  border: solid;
+  border-color: 0;
 }
 
 .user-quizzes-btn {

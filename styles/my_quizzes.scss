@@ -13,6 +13,8 @@
 
 .my-quiz{
   text-align: left;
+  border: solid;
+  border-color: blue($color: #000000);
 }
 
 .user-quizzes-btn{
@@ -25,3 +27,4 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
+

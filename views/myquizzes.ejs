@@ -1,70 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
     <title>My Quizzes</title>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/home_page.css" />
-    <link rel="stylesheet" href="/styles/my_quizzes.css" />
-
-    <script type="text/javascript" src="/login.ejs"></script>
-    <script src="/vendor/jquery-3.0.0.js"></script>
-    <script defer src="/scripts/app.js"></script>
-  </head>
-
   <body class="main-body">
-
-    <nav class="nav"><img src="/assets/quizLogo.png" alt="quiz_logo" /></nav>
-
-    <div class="button-box-container">
-      <button class="button-box" onclick="location.href='submit_form';">
-        Create Quiz
-      </button>
-      <button class="button-box" onclick="location.href='users_quizzes';">
-        My Quizzes
-      </button>
-
-      <button class="button-box" onclick="location.href='results';">
-        My results
-      </button>
-
-      <button class="button-box" onclick="location.href='/';">
-        Home
-      </button>
-    </div>
+    <%- include('./partials/_headers') %>
 
     <h1>My Quizzes</h1>
-    <form action="/api/users/user_quizzes/" method="GET">
-      <div class="my-quizzes">
-        <button class="user-quizzes-btn" onclick="location.href='users_quizzes/:id'; ">
-          <div class="my-quiz">
-            <p>Title:</p>
-            <p>Category:</p>
-          </div>
-        </button>
-
-        <button class="user-quizzes-btn" onclick="location.href='users_quizzes/:id'; ">
-          <div class="my-quiz">
-            <p>Title:</p>
-            <p>Category:</p>
-          </div>
-        </button>
-
-        <button class="user-quizzes-btn" onclick="location.href='users_quizzes/:id'; ">
-          <div class="my-quiz">
-            <p>Title:</p>
-            <p>Category:</p>
-          </div>
-        </button>
-      </div>
+    <form action="/users/users_quizzes" method="GET">
+    <ul id="users"></ul>
+    <% for (let quiz of quizzes) { %>
+        <div class="my-quiz">
+          <p>Title: <%= quiz.title %></p>
+          <p>Category: <%= quiz.name %></p>
+        </div>
+      <% } %>
     </form>
   </body>
 </html>
