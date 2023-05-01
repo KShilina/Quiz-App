@@ -6,16 +6,15 @@
   <%- include('./partials/_headers') %>
   <section class="all-results">
     <article class="results">
-      <div class="top">
-      <p>Quiz Name</p>
-      <label class="user-results">Results</label>
-      <span class="user-results">4/5</span>
-    </div>
-      <div class="bottom">
-      <p>Quiz Category</p>
-      <label class="attempt">Last Attempt</label>
-      <span class="attempt">April 28, 2023</span>
-      </div>
+      <!-- <ul id="users"></ul> -->
+      <% for (let result of results) { %>
+        <div class="my-results">
+          <p>Quiz Name: <%= result.title %></p>
+          <p>Quiz Category: <%= result.name %></p>
+          <p>Score: <%= result.score %></p>
+          <p>Last Attempt: <%= result.created_at %></p>
+        </div>
+      <% } %>
     </article>
   </section>
 </body>

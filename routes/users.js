@@ -34,7 +34,7 @@ router.get('/results/:id', (req, res) => {
   const owner_id = req.params.id;
   userQueries.getAllResults(owner_id)
     .then(results => {
-      res.json({ results });
+      res.render("results", { results });
     })
     .catch(err => {
       res
