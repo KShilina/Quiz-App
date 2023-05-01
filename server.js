@@ -55,7 +55,6 @@ app.get('/submit_form', (req, res) => {
   res.render('form');
 });
 
-
  app.get("results/:id_results",(req, res) =>{
   res.redirect('results');
  })
