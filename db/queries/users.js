@@ -50,7 +50,7 @@ const getAllResults = function (owner_id) {
 };
 
 const showQuizzes = () => {
-  return db.query(`SELECT title, category
+  return db.query(`SELECT title, categories_id
   FROM quizzes
   WHERE is_public = true
   LIMIT 3`)
