@@ -1,39 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Home Page</title>
-
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/home_page.css" />
-
-
-  <script type="text/javascript" src="/login.ejs"></script>
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-</head>
-
+<title>Home Page</title>
 <body class="main-body">
-  <!-- <a onclick="window.location.href='form'">Go to My Page</a> -->
-
-<nav class="nav"><img src="/assets/quizLogo.png" alt="quiz_logo"></nav>
-
-<div class="button-box-container">
-  <button class="button-box" onclick="location.href='form.ejs';">Button 1</button>
-  <button class="button-box" onclick="location.href='users_quizzes';">My Quizzes</button>
-  <button class="button-box" onclick="location.href='/results';">My Results</button>
-  <button class="button-box" onclick="location.href='page4.html';">Button 4</button>
-</div>
+  <%- include('./partials/_headers') %>
 
 <div class="main-box">
   <p>This will be the box</p>

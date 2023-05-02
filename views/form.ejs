@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="/styles/form.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <title>Forms</title>
-</head>
+<title>Forms</title>
 <body class="main-form-body">
+  <%- include('./partials/_headers') %>
   <div class="button-box-container">
     <button class="button-box" onclick="location.href='form.ejs';">Button 1</button>
     <button class="button-box" onclick="location.href='page2.html';">Button 2</button>
@@ -25,7 +17,7 @@
   <h1 class="title">Create new quiz</h1>
 </div>
 
-<form action="/api/users/submit_form" method="POST" class="main-form">
+<form action="/users/submit_form" method="POST" class="main-form">
   <div id="form-div">
     <label for="input1" id="title">Title:</label>
     <input type="text" id="title" name = 'title' style="margin-bottom: 50px; width: 150px;"><br>

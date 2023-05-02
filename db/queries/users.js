@@ -36,15 +36,21 @@ const getAllQuizzes = function (owner_id) {
 };
 
 // get all results
-const getAllResults = () => {
-  return db.query('SELECT * FROM results;')
+const getAllResults = function (owner_id) {
+  return db.query(`
+  SELECT results.score, results.created_at, quizzes.title, categories.name
+  FROM results
+  JOIN quizzes ON quiz_id = quizzes.id
+  JOIN categories ON categories_id = categories.id
+  WHERE owner_id=$1;
+  `, [owner_id])
   .then(data => {
     return data.rows;
   });
 };
 
 const showQuizzes = () => {
-  return db.query(`SELECT title, category
+  return db.query(`SELECT title, categories_id
   FROM quizzes
   WHERE is_public = true
   LIMIT 3`)
@@ -59,8 +65,7 @@ const showQuizzes = () => {
  * @return {Promise<{}>} A promise to the quiz.
  */
 
-// add quiz
-
+// add quiz to db
 const addQuiz = function(quiz) {
   //add quiz data to db
   return db
@@ -78,6 +83,21 @@ const addQuiz = function(quiz) {
     .then((res) => {
       return res.rows[0];
     });
+};
+
+//take quiz with an uniq id
+const takeQuiz = function(quiz_id) {
+  return db
+        .query(
+          `SELECT quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4
+          FROM quizzes
+          JOIN questions ON quiz_id = quizzes.id
+          WHERE quiz_id = $1 `,
+          [quiz_id]
+        )
+        .then((res) => {
+          return res.rows;
+        });
 };
 
 // adding a question to the quiz
@@ -114,5 +134,6 @@ module.exports = {
   getAllResults,
   addQuiz,
   addQuestion,
+  takeQuiz,
   showQuizzes
 };
