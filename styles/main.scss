@@ -1,3 +1,5 @@
+@import 'variables';
+
 body {
   display: flex;
   flex-direction: column;
@@ -21,4 +23,8 @@ nav img{
 }
 nav.nav {
   background: transparent;
+}
+
+h1{
+  color:#706180;
 }

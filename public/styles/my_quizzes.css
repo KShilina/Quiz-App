@@ -10,18 +10,15 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-div.my-quiz {
+.my-quiz-btn {
   text-align: left;
   border: 4px solid;
-  border-color: blue;
-}
-
-.user-quizzes-btn {
+  border-color: #8a8194;
   margin-bottom: 20px;
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(249, 241, 241, 0.3);
   background-color: userQuizzesBtnBackgroundColor;
 }
 
-.user-quizzes-btn:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.my-quiz-btn:hover {
+  background-color: #d8d5d5;
 }
