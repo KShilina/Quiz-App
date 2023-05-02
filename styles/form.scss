@@ -1,9 +1,11 @@
+@import 'variables';
+
 .form-div {
   display: flex;
   flex-direction: row;
 }
 
-.quiz-input {
+.quiz-input{
   margin-bottom: 50px;
   width: 150px;
   background-color: black;
@@ -15,8 +17,11 @@
   text-align: right;
   justify-content: space-between;
   padding-bottom: 50px;
-}
 
-.main-form-body {
+};
+
+.main-form-body{
   padding-top: 150px;
 }
+
+

@@ -1,5 +1,6 @@
 // load .env data into process.env
 require('dotenv').config();
+const userQueries = require('./db/queries/users');
 
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
@@ -47,15 +48,22 @@ app.use('/users', usersRoutes);
 
 //home page
 app.get('/', (req, res) => {
-  res.render('index');
+  userQueries.showQuizzes(req.query)
+  .then(quizzes => {
+    res.render("index",{ quizzes });
+  })
+  .catch(err => {
+    res.status(500).json({ error: err.message })
+  });
 });
+
 
 //show form page
 app.get('/submit_form', (req, res) => {
   res.render('form');
 });
 
- app.get("results/:id_results",(req, res) =>{
+ app.get("/results/:id_results",(req, res) =>{
   res.redirect('results');
  })
 
