@@ -1,4 +1,4 @@
-const db = require('../connection');
+const db = require("../connection");
 
 // // get all users
 // const getUsers = () => {
@@ -24,11 +24,12 @@ const db = require('../connection');
 const getAllQuizzes = function (owner_id) {
   return db
     .query(
-      `SELECT title, categories.name
+      `SELECT title, quizzes.id, categories.name
       FROM quizzes
       JOIN categories ON categories_id = categories.id
       WHERE owner_id=$1;
-      `, [owner_id]
+      `,
+      [owner_id]
     )
     .then((res) => {
       return res.rows;
@@ -37,27 +38,35 @@ const getAllQuizzes = function (owner_id) {
 
 // get all results
 const getAllResults = function (owner_id) {
-  return db.query(`
+  return db
+    .query(
+      `
   SELECT results.score, results.created_at, quizzes.title, categories.name
   FROM results
   JOIN quizzes ON quiz_id = quizzes.id
   JOIN categories ON categories_id = categories.id
   WHERE owner_id=$1;
-  `, [owner_id])
-  .then(data => {
-    return data.rows;
-  });
+  `,
+      [owner_id]
+    )
+    .then((data) => {
+      return data.rows;
+    });
 };
 
 const showQuizzes = () => {
-  return db.query(`SELECT title, categories_id
+  return db
+    .query(
+      `SELECT title, categories.name
   FROM quizzes
+  JOIN categories ON categories_id = categories.id
   WHERE is_public = true
-  LIMIT 3`)
-  .then(result => {
-    return result.rows
-  })
-}
+  LIMIT 3;`
+    )
+    .then((result) => {
+      return result.rows;
+    });
+};
 
 /**
  * Add a quiz to the database
@@ -66,7 +75,7 @@ const showQuizzes = () => {
  */
 
 // add quiz to db
-const addQuiz = function(quiz) {
+const addQuiz = function (quiz) {
   //add quiz data to db
   return db
     .query(
@@ -77,7 +86,7 @@ const addQuiz = function(quiz) {
         quiz.owner_id,
         quiz.categories_id,
         quiz.max_questions,
-        quiz.title
+        quiz.title,
       ]
     )
     .then((res) => {
@@ -86,23 +95,25 @@ const addQuiz = function(quiz) {
 };
 
 //take quiz with an uniq id
-const takeQuiz = function(quiz_id) {
+const takeQuiz = function (quiz_id) {
   return db
-        .query(
-          `SELECT quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4
+    .query(
+      `SELECT quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4, categories.name
           FROM quizzes
           JOIN questions ON quiz_id = quizzes.id
-          WHERE quiz_id = $1 `,
-          [quiz_id]
-        )
-        .then((res) => {
-          return res.rows;
-        });
+          JOIN categories ON categories.id = categories_id
+          WHERE quiz_id = $1;
+          `,
+      [quiz_id]
+    )
+    .then((res) => {
+      return res.rows;
+    });
 };
 
 // adding a question to the quiz
 
-const addQuestion = function(question, quiz_id) {
+const addQuestion = function (question, quiz_id) {
   return db
     .query(
       "INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
@@ -125,9 +136,6 @@ const addQuestion = function(question, quiz_id) {
     });
 };
 
-
-
-
 module.exports = {
   // getUsers,
   getAllQuizzes,
@@ -135,5 +143,5 @@ module.exports = {
   addQuiz,
   addQuestion,
   takeQuiz,
-  showQuizzes
+  showQuizzes,
 };

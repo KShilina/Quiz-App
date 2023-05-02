@@ -7,14 +7,15 @@
     <%- include('./partials/_headers') %>
 
     <h1>My Quizzes</h1>
-    <form action="/users/users_quizzes" method="GET">
+
     <ul id="users"></ul>
     <% for (let quiz of quizzes) { %>
-        <div class="my-quiz">
+      <form action="/users/users_quizzes/quiz/<%= quiz.id %>" method="GET" class="my-quizzes">
+        <button class="my-quiz-btn" type="submit">
           <p>Title: <%= quiz.title %></p>
           <p>Category: <%= quiz.name %></p>
-        </div>
+        </button>
+      </form>
       <% } %>
-    </form>
   </body>
 </html>

@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <title>Home Page</title>
+  <body class="main-body">
+    <%- include('./partials/_headers') %>
 
-<title>Home Page</title>
-<body class="main-body">
-  <%- include('./partials/_headers') %>
-
-<div class="main-box">
-  <p>This will be the box</p>
-</div>
-<div class="three-boxes">
-  <div class="small-box"></div>
-  <div class="small-box"></div>
-  <div class="small-box"></div>
-</div>
-</body>
-
-
+  <div class="main-box">
+    <p>This will be the box</p>
+  </div>
+  <div class="three-boxes">
+    <div class="small-box">
+      Title: <%= quizzes[quizzes.length - 1].title %>
+      Category: <%= quizzes[quizzes.length - 1].name %>
+    </div>
+    <div class="small-box">
+      Title: <%= quizzes[quizzes.length - 2].title %>
+      Category: <%= quizzes[quizzes.length - 2].name %>
+    </div>
+    <div class="small-box">
+      Title: <%= quizzes[quizzes .length - 3].title %>
+      Category: <%= quizzes[quizzes.length - 3].name %>
+    </div>
+  </div>
+  </body>
+    </div>
+  </body>
 </html>

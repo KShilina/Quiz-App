@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
   res.render('users', templateVars);
 });
 
+// http://localhost:8080/users/users_quizzes/1
 router.get('/users_quizzes/:id', (req, res) => {
   const owner_id = req.params.id;
   userQueries.getAllQuizzes(owner_id)
@@ -47,7 +48,7 @@ router.get('/users_quizzes/quiz/:id', (req,res) =>{
   const quiz_id = req.params.id;
   userQueries.takeQuiz(quiz_id)
   .then(quizzes =>{
-    res.json({quizzes});
+    res.render("quiz", {quizzes});
   })
   .catch(err =>{
     res.
@@ -63,7 +64,7 @@ router.post('/submit_form', (req, res) => {
       return userQueries.addQuestion(req.body, quiz.id)
     })
     .then(question => {
-      res.json({ question });
+      res.json({ question });// to redirect or render msg submitted
     })
     .catch(err => {
       res
@@ -75,8 +76,8 @@ router.post('/submit_form', (req, res) => {
 
 router.get("/", (req, res) => {
   userQueries.showQuizzes(req.query)
-  .then(quiz => {
-    res.json(quiz);
+  .then(quizzes => {
+    res.render("index",{ quizzes });
   })
   .catch(err => {
     res.status(500).json({ error: err.message })

@@ -11,11 +11,14 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/home_page.css" />
   <link rel="stylesheet" href="/styles/my_quizzes.css" />
+  <link rel="stylesheet" href="/styles/quiz.css" />
+  <link rel="stylesheet" href="/styles/form.css" />
 
 
   <script type="text/javascript" src="/login.ejs"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+</head>
 </head>
 
 <body class="main-body">
@@ -24,7 +27,7 @@
 
 <div class="button-box-container">
   <button class="button-box" onclick="location.href='submit_form';">Create Quiz</button>
-  <button class="button-box" onclick="location.href='users_quizzes';">My Quizzes</button>
+  <button class="button-box" onclick="location.href='/users/users_quizzes/1';">My Quizzes</button>
   <button class="button-box" onclick="location.href='results';">My Results</button>
   <button class="button-box" onclick="location.href='/';">Home</button>
 </div>
