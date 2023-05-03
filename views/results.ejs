@@ -4,15 +4,21 @@
 <title>Results</title>
 <body>
   <%- include('./partials/_headers') %>
+
+  <h1>My Results</h1>
+
   <section class="all-results">
     <article class="results">
-      <!-- <ul id="users"></ul> -->
       <% for (let result of results) { %>
         <div class="my-results">
-          <p>Quiz Name: <%= result.title %></p>
-          <p>Quiz Category: <%= result.name %></p>
-          <p>Score: <%= result.score %></p>
-          <p>Last Attempt: <%= result.created_at %></p>
+          <div class="left">
+            <p>Quiz Name: <%= result.title %></p>
+            <p>Quiz Category: <%= result.name %></p>
+          </div>
+          <div class="right">
+            <p>Score: <%= result.score %></p>
+            <p>Last Attempt: <%= result.created_at %></p>
+          </div>
         </div>
       <% } %>
     </article>
