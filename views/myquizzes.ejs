@@ -8,7 +8,6 @@
 
     <h1>My Quizzes</h1>
 
-    <ul id="users"></ul>
     <% for (let quiz of quizzes) { %>
       <form action="/users/users_quizzes/quiz/<%= quiz.id %>" method="GET" class="my-quizzes">
         <button class="my-quiz-btn" type="submit">

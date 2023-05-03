@@ -2,15 +2,19 @@
 <html lang="en">
 <title>Quiz</title>
 <body>
+
   <%- include('./partials/_headers') %>
 
-<h1>Take quiz</h1>
+  <h1 class="take-quiz-h1">Take quiz</h1>
+
+  <div class="my-quiz-container">
     <% for (let quiz of quizzes) { %>
       <div class="one-quiz-box">
           <div>
           <p>Title: <%= quiz.title %></p>
           <p>Question: <%= quiz.question %></p>
         </div>
+        <div class="quiz-box">
         <button class="my-quiz-btn">
           <p>Option1: <%= quiz.option1 %></p>
         </button>
@@ -23,10 +27,11 @@
         <button class="my-quiz-btn">
           <p>Option4: <%= quiz.option4 %></p>
         </button>
-
+      </div>
       </div>
       <% } %>
-
+    </div>
+    <button class="submit-btn">SUBMIT</button>
 </form>
 </body>
 </html>
