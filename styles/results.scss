@@ -1,9 +1,11 @@
+@import 'variables';
+
 .my-results {
   margin: 20px;
   padding: 1em;
   border-width: 5px;
-  border: 4px solid #8a8194;
-  background-color: #dad7dd;
+  border: 4px solid $myquizbtnbordercolor;
+  background-color: $userQuizzesBtnBackgroundColor;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,7 +22,6 @@ div.right {
   flex-direction: column;
   padding-left: 50px;
 }
-
 h1 {
   padding-top: 100px;
 }

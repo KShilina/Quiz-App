@@ -160,3 +160,5 @@ VALUES (1, 2, ' ', 0, '2023-04-25');
 
 
 
+INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
+VALUES (3, 4, ' ', 5, '2023-05-02');
