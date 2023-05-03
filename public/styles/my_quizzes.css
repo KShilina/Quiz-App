@@ -15,7 +15,7 @@
   border: 4px solid;
   border-color: #8a8194;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(249, 241, 241, 0.3);
+  box-shadow: darkgray;
   background-color: userQuizzesBtnBackgroundColor;
 }
 

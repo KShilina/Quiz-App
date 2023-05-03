@@ -1,3 +1,37 @@
 .one-quiz-box {
-  border: dotted;
+  border: none;
+  margin-left: 50px;
+}
+
+.my-quiz-container {
+  margin-top: 20px;
+}
+
+.quiz-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.my-quiz-btn {
+  border-radius: 15px;
+  border: none;
+}
+
+.submit-btn {
+  color: white;
+  background: #d8d5d5;
+  width: 170px;
+  margin: 100px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.submit-btn:hover {
+  background-color: thistle;
+}
+
+.take-quiz-h1 {
+  margin-top: 140px;
 }
