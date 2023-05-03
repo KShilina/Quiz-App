@@ -17,7 +17,7 @@
   border-color: $myquizbtnbordercolor;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(249, 241, 241, 0.3);
-  background-color: userQuizzesBtnBackgroundColor;
+  userQuizzesBtnBackgroundColor;
 }
 
 .my-quiz-btn:hover {
@@ -25,8 +25,4 @@
 }
 
 
-// .my-quiz-btn:hover{
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-// }
 
