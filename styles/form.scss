@@ -3,12 +3,12 @@
 .form-div {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .quiz-input{
   margin-bottom: 50px;
   width: 150px;
-  background-color: black;
 }
 
 .labels {
@@ -16,7 +16,8 @@
   flex-direction: column;
   text-align: right;
   justify-content: space-between;
-  padding-bottom: 50px;
+  padding-bottom: 65px;
+  padding-right: 30px;
 
 };
 
@@ -24,4 +25,25 @@
   padding-top: 150px;
 }
 
+#all-inputs {
+  margin-bottom: 10px;
+}
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 650px;
+  background-color: rgb(255, 184, 184);
+  margin-bottom: 20px;
+  border: 1px solid red;
+  border-radius: 5px;
+  color:red;
+  text-align: center;
+  font-size:x-large;
+}
+
+.parent-error {
+  display: none;
+}
