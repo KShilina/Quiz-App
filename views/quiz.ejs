@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Quiz</title>
-<body>
+  <title>Quiz</title>
+  <body>
+    <%- include('./partials/_headers') %>
 
-  <%- include('./partials/_headers') %>
+    <h1 class="take-quiz-h1">Take quiz</h1>
 
-  <h1 class="take-quiz-h1">Take quiz</h1>
-
-  <div class="my-quiz-container">
-    <% for (let quiz of quizzes) { %>
-      <div class="one-quiz-box">
+    <form action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST">
+      <div class="my-quiz-container">
+        <% for (let q of quiz) { %>
+        <div class="one-quiz-box">
           <div>
-          <p>Title: <%= quiz.title %></p>
-          <p>Question: <%= quiz.question %></p>
+            <p>Title: <%= q.title %></p>
+            <p>Question: <%= q.question %></p>
+          </div>
+          <div class="quiz-box">
+            <div class="option-1">
+              <input
+                type="radio"
+                id="option1_<%= q.id %>"
+                name="option1_<%= q.id%>"
+                value="<%= q.option1  %>"
+              />
+              <label for="option1_<%= q.id %>"><%= q.option1 %></label>
+            </div>
+            <div class="option-2">
+              <input
+                type="radio"
+                id="option2_<%= q.id %>"
+                name="option2_<%= q.id%>"
+                value="<%= q.option2 %>"
+              />
+              <label for="option2_<%= q.id %>"><%= q.option2 %></label>
+            </div>
+            <div class="option-3">
+              <input
+                type="radio"
+                id="option3_<%= q.id %>"
+                name="option3_<%= q.id%>"
+                value="<%= q.option3 %>"
+              />
+              <label for="option3_<%= q.id %>"><%= q.option3 %></label>
+            </div>
+
+            <div class="option-4">
+              <input
+                type="radio"
+                id="option4_<%= q.id %>"
+                name="option4_<%= q.id%>"
+                value="<%= q.option4 %>"
+              />
+              <label for="option4_<%= q.id %>"><%= q.option4 %></label>
+            </div>
+          </div>
         </div>
-        <div class="quiz-box">
-        <button class="my-quiz-btn">
-          <p>Option1: <%= quiz.option1 %></p>
-        </button>
-        <button class="my-quiz-btn">
-          <p>Option2: <%= quiz.option2 %></p>
-          </button>
-          <button class="my-quiz-btn">
-          <p>Option3: <%= quiz.option3 %></p>
-        </button>
-        <button class="my-quiz-btn">
-          <p>Option4: <%= quiz.option4 %></p>
-        </button>
+        <% } %>
       </div>
-      </div>
-      <% } %>
-    </div>
-    <button class="submit-btn">SUBMIT</button>
-</form>
-</body>
+      <button class="submit-btn">SUBMIT</button>
+    </form>
+  </body>
 </html>

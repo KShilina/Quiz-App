@@ -83,3 +83,7 @@
 .small-box:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.main-paragraph{
+  color: #583879;
+}

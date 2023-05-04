@@ -14,26 +14,17 @@ VALUES (4, 'Rick');
 INSERT INTO users (id, name)
 VALUES (5, 'John');
 
-INSERT INTO categories (id, name)
-VALUES (1, 'Introduction to Backend');
+INSERT INTO quizzes (is_public, owner_id, max_questions,title)
+VALUES (true, 1, 5, 'SQL statements');
 
-INSERT INTO categories (id, name)
-VALUES (2, 'Introduction to SQL');
+INSERT INTO quizzes (is_public, owner_id, max_questions, title)
+VALUES (true, 1, 5,'Backend quiz');
 
-INSERT INTO categories (id, name)
-VALUES (3, 'Introduction to JavaScript');
+INSERT INTO quizzes (is_public, owner_id, max_questions, title)
+VALUES (true, 2, 5,'JavaScript quiz 2');
 
-INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES ( ' ', true, 1, 2, 5, 'SQL statements');
-
-INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions, title)
-VALUES (' ', true, 1, 1, 5,'Backend quiz');
-
-INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions, title)
-VALUES (' ', true, 2, 3, 5,'JavaScript quiz 2');
-
-INSERT INTO quizzes (quiz_url, is_public, owner_id, categories_id, max_questions,title)
-VALUES (' ', false, 2, 3, 5,'JavaScript quiz 3');
+INSERT INTO quizzes (is_public, owner_id, max_questions,title)
+VALUES (false, 2, 5,'JavaScript quiz 3');
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
@@ -135,7 +126,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 4);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the first parameter of a fetch function?',
-'the url that data is being retrieved from',
+1,
 'the url that data is being retrieved from',
 'the callback that handles errors',
 'the parameter of the .catch method',
@@ -143,22 +134,19 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 4);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('String interpolation is the only way to log passed arguments to the console?',
-'true',
+1,
 'true',
 'false',
 'tru',
 'falsee',
 4);
 
-INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
-VALUES ( 1, 1, ' ', 0, '2023-04-25');
+INSERT INTO results (users_id, quiz_id, score, created_at)
+VALUES ( 1, 1, 0, '2023-04-25');
 
-INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
-VALUES (1, 2, ' ', 0, '2023-04-25');
-
-
+INSERT INTO results (users_id, quiz_id, score, created_at)
+VALUES (1, 2, 0, '2023-04-25');
 
 
-
-INSERT INTO results (users_id, quiz_id, result_url, score, created_at)
-VALUES (3, 4, ' ', 5, '2023-05-02');
+INSERT INTO results (users_id, quiz_id, score, created_at)
+VALUES (3, 4, 5, '2023-05-02');

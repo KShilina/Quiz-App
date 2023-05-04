@@ -24,9 +24,8 @@ const db = require("../connection");
 const getAllQuizzes = function (owner_id) {
   return db
     .query(
-      `SELECT title, quizzes.id, categories.name
+      `SELECT title, quizzes.id
       FROM quizzes
-      JOIN categories ON categories_id = categories.id
       WHERE owner_id=$1;
       `,
       [owner_id]
@@ -41,10 +40,9 @@ const getAllResults = function (owner_id) {
   return db
     .query(
       `
-  SELECT results.score, results.created_at, quizzes.title, categories.name
+  SELECT results.score, results.created_at, quizzes.title
   FROM results
   JOIN quizzes ON quiz_id = quizzes.id
-  JOIN categories ON categories_id = categories.id
   WHERE owner_id=$1;
   `,
       [owner_id]
@@ -57,9 +55,8 @@ const getAllResults = function (owner_id) {
 const showQuizzes = () => {
   return db
     .query(
-      `SELECT title, categories.name
+      `SELECT title
   FROM quizzes
-  JOIN categories ON categories_id = categories.id
   WHERE is_public = true
   LIMIT 3;`
     )
@@ -79,15 +76,8 @@ const addQuiz = function (quiz) {
   //add quiz data to db
   return db
     .query(
-      "INSERT INTO quizzes (quiz_url, is_public, owner_id,categories_id, max_questions, title) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
-      [
-        quiz.quiz_url,
-        quiz.is_public,
-        quiz.owner_id,
-        quiz.categories_id,
-        quiz.max_questions,
-        quiz.title,
-      ]
+      "INSERT INTO quizzes (is_public, owner_id, max_questions, title) VALUES($1, $2, $3, $4) RETURNING *",
+      [quiz.is_public, quiz.owner_id, quiz.max_questions, quiz.title]
     )
     .then((res) => {
       return res.rows[0];
@@ -98,10 +88,9 @@ const addQuiz = function (quiz) {
 const takeQuiz = function (quiz_id) {
   return db
     .query(
-      `SELECT quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4, categories.name
+      `SELECT questions.id, quizzes.title, questions.question, questions.option1,questions.option2, questions.option3, questions.option4
           FROM quizzes
           JOIN questions ON quiz_id = quizzes.id
-          JOIN categories ON categories.id = categories_id
           WHERE quiz_id = $1;
           `,
       [quiz_id]
@@ -136,12 +125,26 @@ const addQuestion = function (question, quiz_id) {
     });
 };
 
+const addResult = function ({score, users_id, quiz_id}) {
+  return db
+    .query(
+      `INSERT INTO results (users_id, quiz_id, score) VALUES($1, $2, $3) RETURNING *`,
+      [users_id, quiz_id, score]
+    )
+    .then((res) => {
+      return res.rows[0];
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
 module.exports = {
-  // getUsers,
   getAllQuizzes,
   getAllResults,
   addQuiz,
   addQuestion,
   takeQuiz,
   showQuizzes,
+  addResult
 };

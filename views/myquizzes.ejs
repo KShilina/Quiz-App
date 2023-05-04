@@ -11,8 +11,7 @@
     <% for (let quiz of quizzes) { %>
       <form action="/users/users_quizzes/quiz/<%= quiz.id %>" method="GET" class="my-quizzes">
         <button class="my-quiz-btn" type="submit">
-          <p>Title: <%= quiz.title %></p>
-          <p>Category: <%= quiz.name %></p>
+          <p> <%= quiz.title %></p>
         </button>
       </form>
       <% } %>
