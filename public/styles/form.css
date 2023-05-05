@@ -1,6 +1,7 @@
 .form-div {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
 }
 
 .quiz-input {
@@ -23,23 +24,5 @@
 
 #all-inputs {
   margin-bottom: 10px;
-}
-
-.error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 650px;
-  background-color: #ffb8b8;
-  margin-bottom: 20px;
-  border: 1px solid red;
-  border-radius: 5px;
-  color: red;
-  text-align: center;
-  font-size: x-large;
-}
-
-.parent-error {
-  display: none;
+  width: 500px;
 }

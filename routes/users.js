@@ -26,6 +26,8 @@ router.get("/users_quizzes/:id", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 
@@ -40,6 +42,8 @@ router.get("/results/:id", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 
@@ -52,17 +56,13 @@ router.get("/users_quizzes/quiz/:id", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 
 router.post("/users_quizzes/quiz/:id", (req, res) => {
   const quiz_id = req.params.id;
-  console.log(req.body);
-  //implement data validation
-  // turn object into array
-  // find length of array
-  // res.status(400).send or .render
-  // or render same page with req.body.questions with prefilled options
   userQueries
     .getQuizAnswers(quiz_id)
     .then((correctAnswers) => {
@@ -71,7 +71,6 @@ router.post("/users_quizzes/quiz/:id", (req, res) => {
         correctAnswers
       );
       const body = { score: userScore, users_id: 1, quiz_id: req.params.id };
-      console.log(body);
       return userQueries.addResult(body);
     })
     .then(() => {
@@ -79,23 +78,12 @@ router.post("/users_quizzes/quiz/:id", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 
-// });
-
 router.post("/submit_form", (req, res) => {
-  // try {
-  //   const body = {...req.body, owner_id: 1}
-  //   const quiz = await userQueries.addQuiz(body);
-  //   const question = await userQueries.addQuestion(req.body, quiz.id);
-  //   console.log('quiz', quiz) // singular quiz that was just added
-
-  //   res.redirect(`/users/users_quizzes/${1}`)
-  // } catch (err) {
-  //   res.status(500).json({ error: err.message });
-  // }
-
   const body = { ...req.body, owner_id: 1 };
   userQueries
     .addQuiz(body)
@@ -108,6 +96,8 @@ router.post("/submit_form", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 
@@ -119,6 +109,8 @@ router.get("/", (req, res) => {
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
+      console.log("Error has occured:", err.message);
+      res.send("Error has occured:", err.message);
     });
 });
 

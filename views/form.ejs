@@ -7,9 +7,6 @@
   <div id="top-bar">
   <h1 class="title">Create new quiz</h1>
 </div>
-<div class="parent-error">
-  <div class="error"> Error: All inputs must be populated</div>
-</div>
 
 <form action="/users/submit_form" method="POST" class="main-form">
   <div class="form-div">
@@ -50,6 +47,8 @@
       <label for="input31" id="q5_ans_3">Possible Answer 3. </label>
       <label for="input32" id="q5_ans_4">Possible Answer 4. </label>
       <label for="input33" id="q5_correct">Correct Answer:</label>
+
+
     </div>
 
     <div class="quiz-input" >
@@ -89,14 +88,15 @@
 
 
   </div>
-  <label for="public">Make quiz private or public:</label>
-
-    <select name="public" id="public">
-    <option value="public">Public</option>
-    <option value="private">Private</option>
-    </select>
 
 </div>
+<label for="public">Make quiz private or public:</label>
+
+<select name="public" id="public">
+<option value="public">Public</option>
+<option value="private">Private</option>
+</select>
+
 <button class="submit-btn">SUBMIT</button>
 </form>
 

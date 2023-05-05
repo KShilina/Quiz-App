@@ -30,8 +30,18 @@ VALUES (false, 2, 5,'JavaScript quiz 3');
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
 VALUES ('What do we use POST request for?', 1, 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
 
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
+VALUES ('What is the purpose of a GET request?', 1, 'The purpose of a GET request is to retrieve data or a resource from a specified server using a given URI', 'For posting data from the server', 'To insert data into our database', 'We never use Get only POST', 2);
+
 INSERT INTO questions ( question, answer, option1, option2, option3, option4, quiz_id)
 VALUES ('What is in the response body of a servers response to GET request?', 1, 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
+
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
+VALUES ('What is the object for retrieving URL parameters?', 3, 'req.body', 'req.cookies', 'req.params', 'there is no way to retrieve URL parameters', 2);
+
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
+VALUES ('What syntax is used for retrieving data from a certain URL', 4, '.then', '.get', '.post', 'fetch', 2);
+
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which SQL statement is used to extract data from a database?',
 4,
@@ -100,6 +110,13 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 'Function',
 3);
 
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('which style of loop is most common for looping though objects?',
+3,
+'for',
+'for of',
+'for in',
+'while',
+3);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the error with the following function implementation?
 const myFunction = function(arg) {
@@ -125,6 +142,14 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 '.isArray',
 4);
 
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('what is the general keyword used in an if statement to excecute code if a condition is not met?',
+4,
+'then',
+'!',
+'not',
+'else',
+4);
+
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the first parameter of a fetch function?',
 1,
 'the url that data is being retrieved from',
@@ -139,6 +164,14 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 'false',
 'tru',
 'falsee',
+4);
+
+INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the correct syntax for interpolating a string?',
+1,
+'${}',
+'$()',
+'${()}',
+'()$',
 4);
 
 INSERT INTO results (users_id, quiz_id, score, created_at)

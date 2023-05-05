@@ -14,24 +14,11 @@
     <% for (let quiz of quizzes) { %>
       <form action="/users/users_quizzes/quiz/<%= quiz.id %>" method="GET" class="my-quizzes">
         <button class="my-quiz-btn" type="submit">
-          <p class="home"> <%= quiz.title %></p>
+          <p class="home"><%= quiz.title %></p>
         </button>
       </form>
       <% } %>
 
-
-    <!-- <div class="small-box" onclick="location.href='/users/users_quizzes/quiz/<%= quizzes[quizzes.length - 1] %>'>
-      <p> <%= quizzes[quizzes.length - 1].title %></p>
-    </div>
-
-    <div class="small-box">
-      <p> <%= quizzes[quizzes.length - 2].title %></p>
-
-    </div>
-    <div class="small-box">
-      <p> <%= quizzes[quizzes .length - 3].title %></p>
-
-    </div> -->
   </div>
   </body>
     </div>

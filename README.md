@@ -16,8 +16,13 @@ Quiz app is a full stack multiple-pages app that you can use to create, take and
 
 ## DEMO
 
+
+#### ERD
 !["Entity Relationship Diagram"](docs/QuizAppERD.png)
+#### Planning CRUD operations
 ![" Planning CRUD operations"](docs/CRUD_schema.png)
+#### Wireframe
+![" Wireframe"](docs/Wireframe.png)
 ## 
 
 ## Project Goals

@@ -3,3 +3,21 @@
 .button-box{
   color:#706180
 }
+
+@media screen and (max-width: 831px){
+
+
+  .main-paragraph{
+    font-size: 25px;
+  }
+
+  .main-box{
+    margin-top: 300px;
+  }
+
+  form.my-quizzes {
+    width: 120px;
+  }
+
+
+};

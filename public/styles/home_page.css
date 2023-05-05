@@ -85,10 +85,46 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.main-paragraph{
+.main-paragraph {
   color: #583879;
+
 }
 
 .home{
   padding-left: 8em;
 }
+
+
+@media screen and (min-width: 389px) and (max-width: 831px) {
+
+  p.main-paragraph{
+    font-size: 25px;
+  }
+
+  div.main-box{
+    margin-top: 200px;
+  }
+
+  .my-quizzes {
+    margin: 0px;
+  }
+
+  .home {
+    text-align: center;
+    padding: 0px;
+  }
+  .my-quiz-btn {
+    padding: 1em;
+  }
+
+  .button-box-container{
+    margin-right: 2px;
+  }
+
+  .button-box{
+    width: 130px;
+    font-size: 15px;
+  }
+
+
+};

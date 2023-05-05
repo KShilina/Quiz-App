@@ -59,24 +59,5 @@
       <button class="submit-btn" type="submit">SUBMIT</button>
     </form>
 
-    <!-- <script>
-      // action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST"
-      const form = document.getElementById("form");
-      form.addEventListener("submit", (event) => {
-
-        const id = window.location.href.split('/').pop()[0];
-        const data = new FormData(event.target);
-        console.log([...data.entries()]);
-        fetch(`/users/users_quizzes/quiz/${id}`, {
-          Method: "POST",
-          Headers: {
-            Accept: "application.json",
-            "Content-Type": "application/json",
-          },
-          Body: data,
-          Cache: "default",
-        });
-      });
-    </script> -->
   </body>
 </html>
