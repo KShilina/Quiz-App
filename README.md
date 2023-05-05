@@ -81,6 +81,6 @@ Collaborate with team members to decide how to break out the work, set good team
 - "nodemon": "^2.0.10"
 
 ## Contributors
-https://github.com/KShilina 
-https://github.com/sharleenb 
-https://github.com/lukechamberland
+- https://github.com/KShilina 
+- https://github.com/sharleenb 
+- https://github.com/lukechamberland
