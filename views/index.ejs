@@ -4,6 +4,8 @@
   <body class="main-body">
     <%- include('./partials/_headers') %>
 
+
+
   <div class="main-box">
     <p class="main-paragraph">This application allows you to create and take your own, and others coding quizzes. Expand your knowledge and learn new topics by pressing one of the quizzes below. Alternatively, allow others to learn and understand by creating your own quiz.</p>
   </div>
@@ -12,7 +14,7 @@
     <% for (let quiz of quizzes) { %>
       <form action="/users/users_quizzes/quiz/<%= quiz.id %>" method="GET" class="my-quizzes">
         <button class="my-quiz-btn" type="submit">
-          <p> <%= quiz.title %></p>
+          <p class="home"> <%= quiz.title %></p>
         </button>
       </form>
       <% } %>
