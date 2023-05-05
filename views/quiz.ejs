@@ -6,7 +6,7 @@
 
     <h1 class="take-quiz-h1">Take quiz</h1>
 
-    <form action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST">
+    <form id="form" action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST">
       <div class="my-quiz-container">
         <% for (let q of quiz) { %>
         <div class="one-quiz-box">
@@ -19,17 +19,17 @@
               <input
                 type="radio"
                 id="option1_<%= q.id %>"
-                name="option1_<%= q.id%>"
-                value="<%= q.option1  %>"
+                name="questions[number<%= q.id%>]"
+                value="1"
               />
-              <label for="option1_<%= q.id %>"><%= q.option1 %></label>
+              <label for="questions[<%= q.id%>]"><%= q.option1 %></label>
             </div>
             <div class="option-2">
               <input
                 type="radio"
                 id="option2_<%= q.id %>"
-                name="option2_<%= q.id%>"
-                value="<%= q.option2 %>"
+                name="questions[number<%= q.id%>]"
+                value="2"
               />
               <label for="option2_<%= q.id %>"><%= q.option2 %></label>
             </div>
@@ -37,8 +37,8 @@
               <input
                 type="radio"
                 id="option3_<%= q.id %>"
-                name="option3_<%= q.id%>"
-                value="<%= q.option3 %>"
+                name="questions[number<%= q.id%>]"
+                value="3"
               />
               <label for="option3_<%= q.id %>"><%= q.option3 %></label>
             </div>
@@ -47,8 +47,8 @@
               <input
                 type="radio"
                 id="option4_<%= q.id %>"
-                name="option4_<%= q.id%>"
-                value="<%= q.option4 %>"
+                name="questions[number<%= q.id%>]"
+                value="4"
               />
               <label for="option4_<%= q.id %>"><%= q.option4 %></label>
             </div>
@@ -56,7 +56,27 @@
         </div>
         <% } %>
       </div>
-      <button class="submit-btn">SUBMIT</button>
+      <button class="submit-btn" type="submit">SUBMIT</button>
     </form>
+
+    <!-- <script>
+      // action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST"
+      const form = document.getElementById("form");
+      form.addEventListener("submit", (event) => {
+
+        const id = window.location.href.split('/').pop()[0];
+        const data = new FormData(event.target);
+        console.log([...data.entries()]);
+        fetch(`/users/users_quizzes/quiz/${id}`, {
+          Method: "POST",
+          Headers: {
+            Accept: "application.json",
+            "Content-Type": "application/json",
+          },
+          Body: data,
+          Cache: "default",
+        });
+      });
+    </script> -->
   </body>
 </html>

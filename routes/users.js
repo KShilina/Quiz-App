@@ -22,7 +22,6 @@ router.get("/users_quizzes/:id", (req, res) => {
   userQueries
     .getAllQuizzes(owner_id)
     .then((quizzes) => {
-      console.log('quizzes', quizzes)
       res.render("myquizzes", { quizzes });
     })
     .catch((err) => {
@@ -35,6 +34,8 @@ router.get("/results/:id", (req, res) => {
   userQueries
     .getAllResults(owner_id)
     .then((results) => {
+      console.log(results);
+      // userQueries.calculateScore()
       res.render("results", { results });
     })
     .catch((err) => {
@@ -55,20 +56,33 @@ router.get("/users_quizzes/quiz/:id", (req, res) => {
 });
 
 router.post("/users_quizzes/quiz/:id", (req, res) => {
-  console.log(req.body)
-  //calculate score based on req.body(to do)
-  const score = 5;
-  const body = {score, users_id: 1, quiz_id: req.params.id}
-  console.log(body);
-  userQueries.addResult(body)
-  .then((result) => {
-    res.redirect(`/users/results/${1}`)
-  })
-  .catch((err) => {
-    res.status(500).json({ error: err.message });
-  });
-
+  const quiz_id = req.params.id;
+  console.log(req.body);
+  //implement data validation
+  // turn object into array
+  // find length of array
+  // res.status(400).send or .render
+  // or render same page with req.body.questions with prefilled options
+  userQueries
+    .getQuizAnswers(quiz_id)
+    .then((correctAnswers) => {
+      const userScore = userQueries.calculateScore(
+        req.body.questions,
+        correctAnswers
+      );
+      const body = { score: userScore, users_id: 1, quiz_id: req.params.id };
+      console.log(body);
+      return userQueries.addResult(body);
+    })
+    .then(() => {
+      res.redirect(`/users/results/${1}`);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 });
+
+// });
 
 router.post("/submit_form", (req, res) => {
   // try {
@@ -82,19 +96,18 @@ router.post("/submit_form", (req, res) => {
   //   res.status(500).json({ error: err.message });
   // }
 
-  const body = {...req.body, owner_id: 1}
-  userQueries.addQuiz(body)
-    .then(quiz => {
+  const body = { ...req.body, owner_id: 1 };
+  userQueries
+    .addQuiz(body)
+    .then((quiz) => {
       //add question
-      return userQueries.addQuestion(req.body, quiz.id)
+      return userQueries.addQuestion(req.body, quiz.id);
     })
-    .then(question => {
-      res.redirect(`/users/users_quizzes/${1}`)
+    .then((question) => {
+      res.redirect(`/users/users_quizzes/${1}`);
     })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
     });
 });
 
@@ -108,6 +121,5 @@ router.get("/", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
-
 
 module.exports = router;

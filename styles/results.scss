@@ -1,5 +1,10 @@
 @import 'variables';
 
+.results {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .my-results {
   margin: 20px;
   padding: 1em;
