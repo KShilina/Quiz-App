@@ -1,21 +1,5 @@
 const db = require("../connection");
 
-// // get all users
-// const getUsers = () => {
-//   return db.query('SELECT * FROM users;')
-//     .then(data => {
-//        return data.rows;
-//     });
-// };
-
-// get all quizzes
-// const getAllQuizzes = () => {
-//   return db.query('SELECT * FROM quizzes;')
-//   .then(data => {
-//     return data.rows;
-//   });
-// };
-
 /**
  * Get all quzzes sorted by a single user.
  * @param {string} owner_id The id of the user.
@@ -109,12 +93,12 @@ const addQuestion = function (question, quiz_id) {
     .query(
       "INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
-        question.question1,
-        question.q1_correct,
-        question.q1_ans_1,
-        question.q1_ans_2,
-        question.q1_ans_3,
-        question.q1_ans_4,
+        question.question,
+        question.ans,
+        question.opt1,
+        question.opt2,
+        question.opt3,
+        question.opt4,
         quiz_id,
       ]
     )
@@ -158,8 +142,6 @@ const getQuizAnswers = function (quiz_id) {
 
 const calculateScore = function (userAns, dbAns) {
   let score = 0;
-  console.log(userAns);
-  console.log(dbAns);
   for (let correctAns of dbAns) {
     const key = `number${correctAns.id}`; //gives us a key
     if (correctAns.answer == Number(userAns[key])) {

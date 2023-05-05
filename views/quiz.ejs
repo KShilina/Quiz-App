@@ -5,13 +5,12 @@
     <%- include('./partials/_headers') %>
 
     <h1 class="take-quiz-h1">Take quiz</h1>
-
     <form id="form" action="/users/users_quizzes/quiz/<%= quiz_id %>" method="POST">
+      <p>Title: <%= quiz[1].title %></p>
       <div class="my-quiz-container">
         <% for (let q of quiz) { %>
         <div class="one-quiz-box">
           <div>
-            <p>Title: <%= q.title %></p>
             <p>Question: <%= q.question %></p>
           </div>
           <div class="quiz-box">

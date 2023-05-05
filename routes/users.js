@@ -37,7 +37,6 @@ router.get("/results/:id", (req, res) => {
     .getAllResults(owner_id)
     .then((results) => {
       console.log(results);
-      // userQueries.calculateScore()
       res.render("results", { results });
     })
     .catch((err) => {
@@ -88,13 +87,49 @@ router.post("/submit_form", (req, res) => {
   userQueries
     .addQuiz(body)
     .then((quiz) => {
-      for (let question of req.body){
+      //add question
+      const question1 = {question: req.body.question1,
+        opt1: req.body.q1_ans_1,
+        opt2: req.body.q1_ans_2,
+        opt3: req.body.q1_ans_3,
+        opt4: req.body.q1_ans_4,
+        ans: req.body.q1_correct}
+
+        const question2 = {question: req.body.question2,
+          opt1: req.body.q2_ans_1,
+          opt2: req.body.q2_ans_2,
+          opt3: req.body.q2_ans_3,
+          opt4: req.body.q2_ans_4,
+          ans: req.body.q2_correct}
+
+        const question3 = {question: req.body.question3,
+          opt1: req.body.q3_ans_1,
+          opt2: req.body.q3_ans_2,
+          opt3: req.body.q3_ans_3,
+          opt4: req.body.q3_ans_4,
+          ans: req.body.q3_correct}
+
+        const question4 = {question: req.body.question4,
+          opt1: req.body.q4_ans_1,
+          opt2: req.body.q4_ans_2,
+          opt3: req.body.q4_ans_3,
+          opt4: req.body.q4_ans_4,
+          ans: req.body.q4_correct}
+        const question5 = {question: req.body.question5,
+          opt1: req.body.q5_ans_1,
+          opt2: req.body.q5_ans_2,
+          opt3: req.body.q5_ans_3,
+          opt4: req.body.q5_ans_4,
+          ans: req.body.q5_correct}
+
+      const questions = [question1, question2, question3, question4, question5]
+      for (let question of questions) {
       userQueries.addQuestion(question, quiz.id);
       }
-      //add question
-      // return userQueries.addQuestion(req.body, quiz.id);
+
+
     })
-    .then((question) => {
+    .then((data) => {
       res.redirect(`/users/users_quizzes/${1}`);
     })
     .catch((err) => {
