@@ -20,6 +20,24 @@ Quiz app is a full stack multiple-pages app that you can use to create, take and
 ![" Planning CRUD operations"](docs/CRUD_schema.png)
 ## 
 
+## Project Goals
+- Build a web app from start to finish -  using the tech and approaches learned to date
+- Turn requirements into a working product
+- Practice architecting an app in terms of UI/UX, Routes/API and Database
+- Manage a multi-developer project with git
+- Simulate the working world where you do not always get to select your team, stack or product features
+- Collaborate, communicate, project manage
+Simulate on the job structures and supports
+- Practice demoing an app in a presentation to help prepare for the final project
+
+## Project Outcomes
+- Use git best practices (sans rebase) when working on a project with multiple members (branching, merging, and doing those often) as well as the github workflow (pull requests).
+- Use the major steps of software development to execute the project; user stories, wireframes, ERD, Routes, etc.
+Collaborate with team members to decide how to break out the work, set good team structure, and dynamic.
+- Engage in a simulated on the job environment
+- Prepare and plan how to tailor communication and presentation approach for a technical and non-technical audience
+- Present a web development project to a technical and non-technical audience
+
 ## Getting Started
 
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
