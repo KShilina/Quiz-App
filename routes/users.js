@@ -88,8 +88,11 @@ router.post("/submit_form", (req, res) => {
   userQueries
     .addQuiz(body)
     .then((quiz) => {
+      for (let question of req.body){
+      userQueries.addQuestion(question, quiz.id);
+      }
       //add question
-      return userQueries.addQuestion(req.body, quiz.id);
+      // return userQueries.addQuestion(req.body, quiz.id);
     })
     .then((question) => {
       res.redirect(`/users/users_quizzes/${1}`);
