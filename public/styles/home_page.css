@@ -45,7 +45,7 @@
   height: 400px;
   margin: auto;
   margin-top: 150px;
-  background-color: #ddd;
+  background-image: url("/assets/white.png");
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
