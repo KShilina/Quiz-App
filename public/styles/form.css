@@ -1,7 +1,6 @@
 .form-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .quiz-input {

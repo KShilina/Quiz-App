@@ -43,7 +43,9 @@ const getAllResults = function (owner_id) {
   SELECT results.score, results.created_at, quizzes.title
   FROM results
   JOIN quizzes ON quiz_id = quizzes.id
-  WHERE owner_id=$1;
+  WHERE owner_id=$1
+  GROUP BY results.score, results.created_at, quizzes.title
+  ORDER BY results.created_at DESC LIMIT 1;
   `,
       [owner_id]
     )
@@ -55,10 +57,10 @@ const getAllResults = function (owner_id) {
 const showQuizzes = () => {
   return db
     .query(
-      `SELECT title
-  FROM quizzes
-  WHERE is_public = true
-  LIMIT 3;`
+      `SELECT quizzes.id, title
+      FROM quizzes
+      WHERE is_public = true
+      LIMIT 3;`
     )
     .then((result) => {
       return result.rows;
@@ -125,7 +127,7 @@ const addQuestion = function (question, quiz_id) {
     });
 };
 
-const addResult = function ({score, users_id, quiz_id}) {
+const addResult = function ({ score, users_id, quiz_id }) {
   return db
     .query(
       `INSERT INTO results (users_id, quiz_id, score) VALUES($1, $2, $3) RETURNING *`,
@@ -138,6 +140,34 @@ const addResult = function ({score, users_id, quiz_id}) {
       return err;
     });
 };
+const getQuizAnswers = function (quiz_id) {
+  return db
+    .query(
+      `SELECT questions.id, question, answer
+    FROM questions
+    WHERE quiz_id = $1`,
+      [quiz_id]
+    )
+    .then((res) => {
+      return res.rows;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+const calculateScore = function (userAns, dbAns) {
+  let score = 0;
+  console.log(userAns);
+  console.log(dbAns);
+  for (let correctAns of dbAns) {
+    const key = `number${correctAns.id}`; //gives us a key
+    if (correctAns.answer == Number(userAns[key])) {
+      score++;
+    }
+  }
+  return score;
+};
 
 module.exports = {
   getAllQuizzes,
@@ -146,5 +176,7 @@ module.exports = {
   addQuestion,
   takeQuiz,
   showQuizzes,
-  addResult
+  addResult,
+  getQuizAnswers,
+  calculateScore,
 };

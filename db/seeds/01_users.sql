@@ -28,13 +28,13 @@ VALUES (false, 2, 5,'JavaScript quiz 3');
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id)
-VALUES ('What do we use POST request for?', 'For sending data to the server', 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
+VALUES ('What do we use POST request for?', 1, 'For sending data to the server', 'For retrieving data from the server', 'Request method and protocol', 'We never use POST only GET', 2);
 
 INSERT INTO questions ( question, answer, option1, option2, option3, option4, quiz_id)
-VALUES ('What is in the response body of a servers response to GET request?', 'The data that the cleint requested', 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
+VALUES ('What is in the response body of a servers response to GET request?', 1, 'The data that the cleint requested', 'Headers offering information about the response format', 'Response method and protocol', 'We never use GET request', 2);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which SQL statement is used to extract data from a database?',
-'SELECT',
+4,
 'GET',
 'EXTRACT',
 'OPEN',
@@ -42,7 +42,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 1);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how do you select all the columns from a table named "Persons"?',
-'SELECT * FROM Persons',
+1,
 'SELECT * FROM Persons',
 'SELECT * .Persons',
 'SELECT [all] FROM Persons',
@@ -50,7 +50,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 1);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how do you select all the records from a table named "Persons" where the value of the column "FirstName" starts with an "a"?',
-'SELECT * FROM Persons WHERE FirstName="a%"',
+4,
 'SELECT * FROM Persons WHERE FirstName LIKE "%a"',
 'SELECT * FROM Persons WHERE FirstName="a"',
 'SELECT * FROM Persons WHERE FirstName="%a%"',
@@ -58,7 +58,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 1);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which SQL keyword is used to sort the result-set?',
-'ORDER BY',
+2,
 'SORT',
 'ORDER BY',
 'SORT BY',
@@ -66,7 +66,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 1);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('With SQL, how can you return the number of records in the "Persons" table?',
-'SELECT COUNT() FROM Persons',
+3,
 'SELECT LEN() FROM Persons',
 'SELECT COLUMNS() FROM Persons',
 'SELECT COUNT() FROM Persons',
@@ -75,7 +75,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the correct way to write an arrow function?',
-'const myFunction = (arg) => {<function-body>}',
+3,
 'const myFunction = function(arg) => {<function-body>}',
 'const myFunction => function(arg) {<function-body>}',
 'const myFunction = (arg) => {<function-body>}',
@@ -84,7 +84,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What method is used to divide a string into an array?',
-'.split',
+1,
 '.split',
 '.map',
 '.foreach',
@@ -93,7 +93,7 @@ INSERT INTO questions (question, answer, option1, option2, option3, option4, qui
 
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('Which of the following is not a JavaScript data type?',
-'Function',
+4,
 'Number',
 'String',
 'Boolean',
@@ -110,7 +110,7 @@ const myFunction = function(arg) {
   return newArr;
 }
 ',
-'for loop is defined incorrectly',
+2,
 'values are primitive data types and cannot be manipulated',
 'for loop is defined incorrectly',
 'variable declaration keyword is incorrect',
@@ -118,7 +118,7 @@ const myFunction = function(arg) {
 3);
 
 INSERT INTO questions (question, answer, option1, option2, option3, option4, quiz_id) VALUES ('What is the correct method for error handling when using promises?',
-'.catch',
+2,
 '.then',
 '.catch',
 '.push',
