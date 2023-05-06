@@ -15,7 +15,9 @@ Quiz app is a full stack multiple-pages app that you can use to create, take and
 - As a non-logged-in user, I can't create a quiz and see public quizzes
 
 ## DEMO
-
+![Demo](docs/demo1.gif)
+![Demo](docs/demo2.gif)
+![Demo](docs/demo3.gif)
 
 #### ERD
 !["Entity Relationship Diagram"](docs/QuizAppERD.png)

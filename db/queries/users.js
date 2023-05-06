@@ -59,7 +59,6 @@ const showQuizzes = () => {
 
 // add quiz to db
 const addQuiz = function (quiz) {
-  //add quiz data to db
   return db
     .query(
       "INSERT INTO quizzes (is_public, owner_id, max_questions, title) VALUES($1, $2, $3, $4) RETURNING *",
@@ -87,7 +86,8 @@ const takeQuiz = function (quiz_id) {
 };
 
 // adding a question to the quiz
-
+//The question parameter is an object that contains the details of the question (question text, answer, and four options). The quiz_id parameter is the ID of the quiz that the question belongs to.
+//The RETURNING * clause at the end of the SQL statement returns the inserted row as an object.
 const addQuestion = function (question, quiz_id) {
   return db
     .query(
